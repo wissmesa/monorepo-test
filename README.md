@@ -1,7 +1,27 @@
-for run application with server and client use the next commands:
-1 - docker compose up --build
-2 - then you gonna see the client at the port localhost:8000 and the server at the port localhost:3000
-3 - for running the test :
-3.1 docker ps, and then take de id of the container you want to check the test
-3.2 docker exec -it <idcontainer> sh
-3.3 npm run test
+# Test Toolbox - Luis Mesa
+
+## Documentation
+
+Once the project has been cloned, Run
+
+```bash
+npm install
+```
+
+on both the server and client, then
+
+```bash
+docker compose up --build
+```
+
+in the root to build the two applications; In the case of the client it runs on port: 8000 and for the server: 3000.
+
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  docker ps
+  docker exec -it <CONTAINER_ID> sh
+  npm run test
+```
