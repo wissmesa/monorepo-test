@@ -7,9 +7,9 @@ services:
     ports:
       - "3000:3000" # Adjust as needed
 
-  # client:
-  #   build:
-  #     context: client
-  #     dockerfile: ./Dockerfile
-  #   ports:
-  #     - "8000:8000" # Adjust as needed
+  client:
+    build:
+      context: client
+      dockerfile: ./Dockerfile
+    ports:
+      - "8000:8000" # Adjust as needed

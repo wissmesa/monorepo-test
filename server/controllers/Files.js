@@ -1,7 +1,7 @@
 const config = require('../config/index');
 const { getFileByName } = require('../utils/getFileByName');
 const { searchFilesByname } = require('../utils/searchFilesByname');
-
+const fetch = require("node-fetch");
 exports.getAllFiles = async (req, res) => {
     try {
         const response = await fetch('https://echo-serv.tbxnet.com/v1/secret/files', {
@@ -15,8 +15,8 @@ exports.getAllFiles = async (req, res) => {
         const data = await response.json();
         const files = await searchFilesByname(data)
         if (req.query.file) {
-             getFileByName(files,req.query.file,res)
-        }else{
+            getFileByName(files, req.query.file, res)
+        } else {
             res.json(files);
         }
     } catch (err) {

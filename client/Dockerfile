@@ -1,13 +1,8 @@
-FROM node:16-alpine
-
-WORKDIR /client/
-
-COPY package*.json ./
-
-RUN npm install
-
+FROM node:16-alpine AS base
+WORKDIR /usr/src/app/client
 COPY . .
+RUN npm install --frozen-lockfile
 
 EXPOSE 8000
 
-CMD ["npm", "start"]
+CMD ["npm", "run","dev"]
