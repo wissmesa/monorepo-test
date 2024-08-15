@@ -1,0 +1,25 @@
+{
+  "name": "quickstart",
+  "version": "1.0.0",
+  "description": "A simple node backend for the mx-quickstart app",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "nodemon index.js",
+    "test": "mocha"
+  },
+  "author": "mxconnect team",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^5.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mocha": "^10.7.3",
+    "nodemon": "^2.0.15",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.10.0"
+  }
+}
