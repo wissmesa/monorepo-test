@@ -1,41 +1,35 @@
+import Table from 'react-bootstrap/Table';
+import { useSelector } from 'react-redux';
 
-import { useSelector } from "react-redux";
+function NewTable() {
+    const listOfLines = useSelector((state) => state.fileDetailLines.value);
 
-const Table = () => {
-    const listOfLines = useSelector((state) => state.fileDetailLines.value)
     return (
         <>
             {listOfLines?.lines && listOfLines.lines.length > 0 ? (
-                <div style={{ margin:"10px 15px" }}>
-                    <div
-                        style={{
-                            display: 'grid',
-                            gridTemplateColumns: '40% 30% 10%'
-                        }}
-                    >
-                        <span>hex</span>
-                        <span>text</span>
-                        <span>number</span>
-                    </div>
-                    {listOfLines?.lines.map((item, i) => (
-                        <div
-                            style={{
-                                display: 'grid',
-                                gridTemplateColumns: '40% 30% 10%'
-                            }}
-                            key={i}
-                        >
-                            <span>{item.hex}</span>
-                            <span>{item.text}</span>
-                            <span>{item.number}</span>
-                        </div>
-                    ))}
-                </div>
-            ) : (
-                <div>no tiene elementos</div>
-            )}
+                <Table striped>
+                    <thead>
+                        <tr>
+                            <th>Line</th>
+                            <th>hex</th>
+                            <th>Text</th>
+                            <th>Number</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {listOfLines?.lines.map((item, i) => (
+                            <tr key={i}>
+                                <td>Line {i + 1 }</td>
+                                <td>{item.hex}</td>
+                                <td>{item.text}</td>
+                                <td>{item.number}</td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </Table>
+            ) : <div>no tiene elementos</div>}
         </>
     );
-};
+}
 
-export default Table;
+export default NewTable;

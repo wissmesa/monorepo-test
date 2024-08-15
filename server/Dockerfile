@@ -4,4 +4,5 @@ COPY . .
 RUN npm install --frozen-lockfile
 
 EXPOSE 3000/tcp
+
 CMD [ "node", "index.js" ]

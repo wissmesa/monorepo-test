@@ -1,0 +1,9 @@
+.container-table{
+    display: grid;
+    grid-template-columns: 40% 30% 10%;
+
+}
+.container{
+    margin: 7rem;
+    border: 1px solid;
+}
